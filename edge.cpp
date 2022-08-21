@@ -3,8 +3,8 @@ using namespace std;
 
 class Edge {
 private:
-    int first_station;
-    int second_station;
+    int first_station; // id
+    int second_station; // id
     int color_id;    //don't forget to mention what color has what id 
     int distance;
 public:
