@@ -69,7 +69,7 @@ public:
                 break;
 
             default:
-                Shortest_path sortest_path;
+                Shortest_path_finder sortest_path;
                 int source,destination;
                 cin>>source>>destination;
                 vector<pair<int,int>> path=sortest_path.get_shortest_path(source,metrograph);

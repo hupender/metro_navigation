@@ -2,7 +2,7 @@
 #include "graph.cpp"
 #include"connection.cpp"
 using namespace std;
-class Shortest_path{
+class Shortest_path_finder{
 public:
 
     vector<pair<int,int>> get_shortest_path(int source,MetroGraph mg) {
@@ -13,7 +13,12 @@ public:
         distance[source]=0;
 
         //store parent station of all stations
-        vector<pair<int,int>> parent(no_of_station);
+        vector<pair<int,int>> parent(no_of_station, {-1, 0});
+        // parent[i].first is the source from which i has shortest path
+        // parent[i].second is the color of edge from  i <--> parent[i].first
+        // parent[i].first is -1 only for source.
+        // parent[i].first is -1 also when i is not reachable
+
         parent[source]={-1,0};
 
         // keep track of color change and with every color change we make a increment of c
