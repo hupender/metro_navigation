@@ -72,10 +72,8 @@ public:
                 Shortest_path sortest_path;
                 int source,destination;
                 cin>>source>>destination;
-                vector<int> path=sortest_path.get_shortest_path(source,destination,metrograph);
-                for(int i=0;i<path.size();i++) {
-                    cout<<path[i]<<endl;
-                }
+                vector<pair<int,int>> path=sortest_path.get_shortest_path(source,metrograph);
+                reverse(path.begin(),path.end());
                 break;
 
         }

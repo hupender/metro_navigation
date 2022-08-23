@@ -5,7 +5,7 @@ using namespace std;
 class Shortest_path{
 public:
 
-    vector<int> get_shortest_path(int source,int destinstion,MetroGraph mg) {
+    vector<pair<int,int>> get_shortest_path(int source,MetroGraph mg) {
 
         int no_of_station=mg.get_count_station();
         //store shortest distance from the given source
@@ -13,12 +13,16 @@ public:
         distance[source]=0;
 
         //store parent station of all stations
-        vector<int> parent(no_of_station);
-        parent[source]=-1;
+        vector<pair<int,int>> parent(no_of_station);
+        parent[source]={-1,0};
 
-        set<pair<int,int>> s;  // keeps data in a sorted way and works like a priority queue
         // keep track of color change and with every color change we make a increment of c
-        int color_id_initial,color_id_final;
+        vector<int> color(no_of_station);
+        color[source]=-1;
+
+        // keeps data in a sorted way and works like a priority queue
+        set<pair<int,int>> s;
+
         s.insert({0,source});
         while(!s.empty()) {
 
@@ -34,17 +38,36 @@ public:
             vector<vector<Connection>> adj_list=mg.get_adjacency();
 
             for(auto i:adj_list[top_node]) {
-                // check if distance to reach a station is greater than 
-                if(distance[i.get_second_station()] > i.get_distance()+top_dis) {
-                    auto check=s.find({i.get_second_station(),distance[i.get_second_station()]});
+                
+                // get the color of edge between curr station and child nodes
+                color[i.get_second_station()]=i.get_color_id();
+
+                int line_change_factor=10;
+
+                if(color[i.get_second_station()]==color[top_node]) {
+                    line_change_factor=0;
+                }
+
+                // check if distance to reach a station is short from any path
+                if(distance[i.get_second_station()] > i.get_distance()+top_dis+line_change_factor) {
+                    auto check=s.find({distance[i.get_second_station()],i.get_second_station()});
+                    
+                    // erase any earlier presence of the station if any present in the set
                     if(check!=s.end()) {
                         s.erase(check);
                     }
-                    parent[i.get_second_station()]=top_node;
-                    s.insert(i.get_second_station(),top_dis+i.get_distance());
-                    distance[i.get_second_station()]=top_dis+i.get_distance();
+
+                    // update parent
+                    parent[i.get_second_station()]={top_node,i.get_color_id()};
+
+                    // insert with the short path
+                    s.insert(i.get_second_station(),top_dis+i.get_distance()+line_change_factor);
+
+                    //update the distance vector
+                    distance[i.get_second_station()]=top_dis+i.get_distance()+line_change_factor;
                 }
             }
         }
+        return parent;
     }
 };

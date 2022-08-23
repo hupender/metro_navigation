@@ -52,8 +52,9 @@ public :
         adj[station_id].clear();
         for(int i=0;i<adj.size();i++) {
             for(int j=0;j<adj[i].size();j++) {
-                if(adj[i][j].get_first_station()==station_id || adj[i][j].get_second_station==station_id) {
-                    adj[i][j]=
+                if(adj[i][j].get_first_station()==station_id || adj[i][j].get_second_station()==station_id) {
+                    adj[i][j];
+                    //take help
                 }
             }
         }
