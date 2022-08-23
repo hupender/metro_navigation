@@ -5,14 +5,18 @@ using namespace std;
 
 class MetroGraph{
 private:
+
+    // adjacency list
     vector< vector<Connection>> adj;
+
     // store all stations
     vector<Station> stations;
 
 public :
-    MetroGraph(){
-        adj.resize(stations.size());
-    }
+
+    // MetroGraph(){
+    //     adj.resize(stations.size());
+    // }
 
     // find distance between two stations
     float find_distance(int x1,int y1,int x2,int y2) {

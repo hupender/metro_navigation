@@ -5,8 +5,6 @@
 using namespace std;
 
 class Ui_manager {
-private:
-    int l;
 public:
     
     MetroGraph m;
@@ -25,10 +23,10 @@ public:
                 int n;
                 cin>>n;
                 for(int i=0;i<n;i++) {
-                    int id,x,y,count_platform;
+                    int id,x,y;
                     string s;
-                    cin>>id>>s>>x>>y>>count_platform;
-                    Station st(id,s,x,y,count_platform);
+                    cin>>id>>s>>x>>y;
+                    Station st(id,s,x,y);
                     m.add_station(st);
                 }
             // add edge
