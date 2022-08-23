@@ -1,9 +1,30 @@
 <num_stations>
-<station_1_name> <station1_x_coord> <station1_y_coord> <station1_line_color>
-<station_2_name> <station2_x_coord> <station2_y_coord> <station2_line_color>
-...
-<station_n_name> <stationn_x_coord> <stationn_y_coord> <stationn_line_color>
 
-<num_connections> # a <-> b are connected 
-<station_a_name> <station_b_name> 
-....
+
+# data for station 1
+<station id>
+<station name>
+<station1_x_coord> 
+<station1_y_coord> 
+.
+.
+.
+.
+.
+.
+.
+.
+.
+#data for station n
+<station id>
+<station name>
+<station1_x_coord> 
+<station1_y_coord> 
+
+#connection details
+<connection1> <connection2> <color>
+.
+.
+.
+.
+<connection_nth> <connection_nth> <color>
