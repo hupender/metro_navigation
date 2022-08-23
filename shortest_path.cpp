@@ -21,12 +21,20 @@ public:
         int color_id_initial,color_id_final;
         s.insert({0,source});
         while(!s.empty()) {
+
+            // iterator to set of pairs
             set<pair<int,int>>::iterator itr;
+
+            // pop element with smallest distance
             itr=s.begin();
             int top_node=itr->second;
             int top_dis=itr->first;
+
+            //get adjacency list
             vector<vector<Connection>> adj_list=mg.get_adjacency();
+
             for(auto i:adj_list[top_node]) {
+                // check if distance to reach a station is greater than 
                 if(distance[i.get_second_station()] > i.get_distance()+top_dis) {
                     auto check=s.find({i.get_second_station(),distance[i.get_second_station()]});
                     if(check!=s.end()) {

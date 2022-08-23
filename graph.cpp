@@ -58,33 +58,19 @@ public :
         adj[c.get_second_station()].push_back(c);
         cout<<"ADDDED SUCCESSFULLY"<<endl;
     }
-    // void delete_connection(int id1,int id2) {
-    //     for(int i=0;i<stations.size();i++) {
-    //         if(i==id1) {
-    //             for(auto it:adj[i]) {
-    //                 if(it.get_first_station()==id2 || it.get_second_station()==id2) {
-    //                     // delete the particular entry and put a empty slot there
-    //                     adj[i].erase(it);
-    //                 }
-    //             }
-    //         }
-    //         if(i==id2) {
-    //             for(auto it:adj[i]) {
-    //                 if(it.get_first_station()==id1 || it.get_second_station()==id1) {
-    //                     //how to delete a vector element and put a empty vector there
-    //                 }
-    //             }
-    //         }
-    //     }
-    //  }
-
-
-    // void delete_connection(int id_1st_station,int id_2nd_station) {
-    //     vector<vector<Connection>>::iterator it;
-    //     for(it=adj[id_1st_station].begin(); it!=adj[id_1st_station].end() ;it++) {
-    //         if(it->get_first_station()==id_2nd_station || it.get_second_station()==id_2nd_station) {
-    //             adj[id_1st_station].erase(it);
-    //         }
-    //     }
-    // }
+    
+    // delete connection
+    void delete_connection(int id_1st_station,int id_2nd_station) {
+        vector<Connection>::iterator it;
+        for(it=adj[id_1st_station].begin(); it!=adj[id_1st_station].end() ;it++) {
+            if(it->get_second_station()==id_2nd_station) {
+                adj[id_1st_station].erase(it);
+            }
+        }
+        for(it=adj[id_2nd_station].begin(); it!=adj[id_2nd_station].end() ;it++) {
+            if(it->get_second_station()==id_1st_station) {
+                adj[id_1st_station].erase(it);
+            }
+        }
+    }
 };
