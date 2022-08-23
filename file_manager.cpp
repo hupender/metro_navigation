@@ -3,7 +3,7 @@
 #include<bits/stdc++.h>
 #include "graph.cpp"
 using namespace std;
-class file_manager{
+class File_manager{
 public:
     MetroGraph get_input_from_file() {
         MetroGraph metro_graph;

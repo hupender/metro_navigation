@@ -10,14 +10,13 @@ using namespace std;
 class Ui_manager {
 public:
     
-    MetroGraph metrograph;
 
     // 1 : add station
     // 2 : add edge/connection
     // 3 : remove station
     // 4 : remove edge
     // 5 : find sortest path
-    void operation() {
+    void operation(MetroGraph metrograph) {
         int choice;
         cout<<"Enter what operation you want to do"<<endl;
         cin>>choice;
