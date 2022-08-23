@@ -48,13 +48,16 @@ public :
     }
     
     // delete station
+    // very inefficient
+    // Todo : Make it efficient
     void delete_station(int station_id) {
         adj[station_id].clear();
         for(int i=0;i<adj.size();i++) {
             for(int j=0;j<adj[i].size();j++) {
                 if(adj[i][j].get_first_station()==station_id || adj[i][j].get_second_station()==station_id) {
-                    adj[i][j];
-                    //take help
+                    // adj[i] is the vector
+                    // we need to delete its jth element
+                    adj[i].erase(adj[i].begin()+j);
                 }
             }
         }
