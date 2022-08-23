@@ -57,7 +57,7 @@ public:
                 int id;
                 cout<<"Enter id of station you want to delete"<<endl;
                 cin>>id;
-
+                metrograph.delete_station(id);
                 break;
             
             // remove a edge/connection
@@ -65,6 +65,7 @@ public:
                 int id1,id2;
                 cout<<"Enter id of the station you want to delete the edge"<<endl;
                 cin>>id1>>id2;
+                metrograph.delete_connection(id1,id2);
                 break;
 
             default:

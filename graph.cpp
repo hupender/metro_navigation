@@ -14,9 +14,6 @@ private:
 
 public :
 
-    MetroGraph(){
-        adj.resize(stations.size());
-    }
 
     // get adjacency list
     vector<vector<Connection>> get_adjacency() {
@@ -46,6 +43,8 @@ public :
     // add station
     void add_station(Station s) {
         stations.push_back(s);
+        adj.push_back({});
+        // can use resize instead
     }
 
     // get count of stations
