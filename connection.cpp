@@ -14,19 +14,20 @@ private:
     // 3 for pink
     // 4 for red 
 
-    // float distance;
+    float distance;
 public:
 
     Connection(
         int     first_station   ,
         int     second_station  ,
-        int     color_id               
+        int     color_id        ,
+        float   distance  
     )
     {
         this->first_station  = first_station  ;   
         this->second_station = second_station ;   
         this->color_id       = color_id       ;   
-        // this->distance       = distance       ;   
+        this->distance       = distance       ;   
     }
 
     // station 1 id
@@ -45,7 +46,7 @@ public:
     }
 
     // // distance between two  station
-    // int get_distance() {
-    //     return distance;
-    // }
+    int get_distance() {
+        return distance;
+    }
 };

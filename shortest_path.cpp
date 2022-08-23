@@ -3,17 +3,18 @@
 #include"connection.cpp"
 using namespace std;
 class Shortest_path{
-private:
-    vector<vector<int>> dp_table;
 public:
 
-    int get_shortest_path(int source,int destinstion,MetroGraph mg) {
+    vector<int> get_shortest_path(int source,int destinstion,MetroGraph mg) {
 
-        int no_of_station=mg.get_no_of_stations();
+        int no_of_station=mg.get_count_station();
+        //store shortest distance from the given source
         vector<int> distance(no_of_station,INT_MAX);
         distance[source]=0;
 
-        vector<int> parent(no_of_station,-1);
+        //store parent station of all stations
+        vector<int> parent(no_of_station);
+        parent[source]=-1;
 
         set<pair<int,int>> s;  // keeps data in a sorted way and works like a priority queue
         // keep track of color change and with every color change we make a increment of c
