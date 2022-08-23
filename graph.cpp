@@ -46,6 +46,19 @@ public :
         adj.push_back({});
         // can use resize instead
     }
+    
+    // delete station
+    void delete_station(int station_id) {
+        adj[station_id].clear();
+        for(int i=0;i<adj.size();i++) {
+            for(int j=0;j<adj[i].size();j++) {
+                if(adj[i][j].get_first_station()==station_id || adj[i][j].get_second_station==station_id) {
+                    adj[i][j]=
+                }
+            }
+        }
+        cout<<"STATION DELETED SUCCESSFULLY"<<endl;
+    }
 
     // get count of stations
     int get_count_station() {
@@ -62,12 +75,12 @@ public :
     void delete_connection(int id_1st_station,int id_2nd_station) {
         vector<Connection>::iterator it;
         for(it=adj[id_1st_station].begin(); it!=adj[id_1st_station].end() ;it++) {
-            if(it->get_second_station()==id_2nd_station) {
+            if(it->get_second_station()==id_2nd_station || it->get_first_station()==id_2nd_station) {
                 adj[id_1st_station].erase(it);
             }
         }
         for(it=adj[id_2nd_station].begin(); it!=adj[id_2nd_station].end() ;it++) {
-            if(it->get_second_station()==id_1st_station) {
+            if(it->get_second_station()==id_1st_station || it->get_first_station()==id_1st_station) {
                 adj[id_1st_station].erase(it);
             }
         }
