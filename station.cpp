@@ -4,40 +4,39 @@ class Station {
 
 private:
     
-    int id;
-    string name;
-    int x_coordinate;
-    int y_coordinate;
-    int platform;
+    int      station_id;
+    string   station_name;
+    int      station_x_coordinate;
+    int      station_y_coordinate;
 
 public:
     // constructor
-    Station(int a,string s,int x,int y,int count) {
-        id=a;
-        name=s;
-        x_coordinate=x;
-        y_coordinate=y;
-        platform=count;
+    Station(
+        int      station_id,
+        string   station_name,
+        int      station_x_coordinate,
+        int      station_y_coordinate
+    ) {
+        this->station_id             = station_id;
+        this->station_name           = station_name;
+        this->station_x_coordinate   = station_x_coordinate;
+        this->station_y_coordinate   = station_y_coordinate;
     }
 
     // get id of station
     int get_id() {
-        return id;
+        return station_id;
     }
     // name of station
     string get_name() {
-        return name;
+        return station_name;
     }
     // x coordinate of station
     int get_x_coordinate() {
-        return x_coordinate;
+        return station_x_coordinate;
     }
     // y coordinate of station
     int get_y_coordinate() {
-        return y_coordinate;
-    }
-    // number of platform on a particular
-    int get_count_plat() {
-        return platform;
+        return station_y_coordinate;
     }
 };

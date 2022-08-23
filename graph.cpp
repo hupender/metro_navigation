@@ -14,6 +14,11 @@ public :
         adj.resize(stations.size());
     }
 
+    // find distance between two stations
+    float find_distance(int x1,int y1,int x2,int y2) {
+        return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+    }
+
     // add station
     void add_station(Station s) {
         stations.push_back(s);

@@ -10,9 +10,14 @@ private:
 public:
     
     MetroGraph m;
-    // int p=5;    
-    void operation() {
-        switch(5) {
+
+    // 1 : add station
+    // 2 : add edge/connection
+    // 3 : remove station
+    // 4 : remove edge
+    // 5 : find sortest path
+    void operation(int choice) {
+        switch(choice) {
 
             // add station
             case 1:

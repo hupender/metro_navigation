@@ -16,8 +16,6 @@ private:
 
     float distance;
 public:
-    // store all stations
-    vector<Station> stations;
 
     Connection(
         int     first_station   ,
@@ -31,13 +29,7 @@ public:
         this->color_id       = color_id       ;   
         this->distance       = distance       ;   
     }
-
-    // find distance between two stations
-    float find_distance(int x1,int y1,int x2,int y2) {
-        return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
-    }
-
-
+    
     // station 1 id
     int get_first_station() {
         return first_station;
