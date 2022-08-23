@@ -1,3 +1,7 @@
+#ifndef SHORTEST_PATH_FINDER_CPP
+#define SHORTEST_PATH_FINDER_CPP
+
+
 #include<bits/stdc++.h>
 #include "graph.cpp"
 using namespace std;
@@ -75,3 +79,6 @@ public:
         return parent;
     }
 };
+
+
+#endif

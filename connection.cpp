@@ -1,6 +1,8 @@
 
+#ifndef CONNECTION_CPP
+#define CONNECTION_CPP
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #include "station.cpp"
 using namespace std;
 
@@ -53,3 +55,6 @@ public:
         return distance;
     }
 };
+
+
+#endif /* CONNECTION_CPP */

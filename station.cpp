@@ -1,3 +1,8 @@
+
+
+#ifndef STATION_CPP
+#define STATION_CPP
+
 #include<bits/stdc++.h>
 using namespace std;
 class Station {
@@ -39,4 +44,7 @@ public:
     int get_y_coordinate() {
         return station_y_coordinate;
     }
+
 };
+
+#endif

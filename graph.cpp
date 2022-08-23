@@ -1,3 +1,7 @@
+
+#ifndef GRAPH_CPP
+#define GRAPH_CPP
+
 #include<bits/stdc++.h>
 #include "connection.cpp"
 using namespace std;
@@ -89,3 +93,6 @@ public :
         }
     }
 };
+
+
+#endif

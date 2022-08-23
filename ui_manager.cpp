@@ -1,3 +1,7 @@
+
+#ifndef UI_MANAGER_CPP
+#define UI_MANAGER_CPP
+
 #include<bits/stdc++.h>
 #include "graph.cpp"
 #include "shortest_path.cpp"
@@ -78,3 +82,7 @@ public:
     }
     
 };
+
+
+
+#endif
