@@ -1,3 +1,5 @@
+
+
 #include<bits/stdc++.h>
 #include "station.cpp"
 using namespace std;
@@ -15,6 +17,7 @@ private:
     // 4 for red 
 
     float distance;
+
 public:
 
     Connection(

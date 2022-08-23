@@ -1,7 +1,5 @@
 #include<bits/stdc++.h>
-#include"connection.cpp"
-#include"station.cpp"
-#include"graph.cpp"
+#include "graph.cpp"
 #include "shortest_path.cpp"
 using namespace std;
 
@@ -39,12 +37,12 @@ public:
 
             // add edge
             case 2:
-                int n;
+                int p;
                 // how many edges we want to add
                 cout<<"Enter count of edges you want to add "<<endl;
-                cin>>n;
+                cin>>p;
                 cout<<"Enter the edges you want to add"<<endl;
-                for(int i=0;i<n;i++) {
+                for(int i=0;i<p;i++) {
                     int id1,id2,color;
                     float d=metrograph.get_distance(id1,id2);
                     Connection c(id1,id2,color,d);

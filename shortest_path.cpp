@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 #include "graph.cpp"
-#include"connection.cpp"
 using namespace std;
 class Shortest_path_finder{
 public:
@@ -66,7 +65,7 @@ public:
                     parent[i.get_second_station()]={top_node,i.get_color_id()};
 
                     // insert with the short path
-                    s.insert(i.get_second_station(),top_dis+i.get_distance()+line_change_factor);
+                    s.insert({top_dis+i.get_distance()+line_change_factor, i.get_second_station()});
 
                     //update the distance vector
                     distance[i.get_second_station()]=top_dis+i.get_distance()+line_change_factor;
