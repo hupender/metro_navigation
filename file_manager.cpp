@@ -2,6 +2,8 @@
 #define FILE_MANAGER_CPP
 #include<bits/stdc++.h>
 #include "graph.cpp"
+#include "common.h"
+
 using namespace std;
 class File_manager{
 public:

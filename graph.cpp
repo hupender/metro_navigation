@@ -4,6 +4,8 @@
 
 #include<bits/stdc++.h>
 #include "connection.cpp"
+#include "common.h"
+
 using namespace std;
 
 class MetroGraph{

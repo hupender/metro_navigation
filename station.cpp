@@ -4,6 +4,8 @@
 #define STATION_CPP
 
 #include<bits/stdc++.h>
+#include "common.h"
+
 using namespace std;
 class Station {
 

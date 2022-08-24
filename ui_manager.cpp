@@ -5,6 +5,8 @@
 #include<bits/stdc++.h>
 #include "graph.cpp"
 #include "shortest_path.cpp"
+#include "common.h"
+
 using namespace std;
 
 class Ui_manager {

@@ -4,6 +4,8 @@
 
 #include<bits/stdc++.h>
 #include "graph.cpp"
+#include "common.h"
+
 using namespace std;
 class Shortest_path_finder{
 public:

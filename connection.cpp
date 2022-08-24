@@ -4,6 +4,7 @@
 
 #include <bits/stdc++.h>
 #include "station.cpp"
+#include "common.h"
 using namespace std;
 
 class Connection {
