@@ -7,7 +7,6 @@ class File_manager{
 public:
     MetroGraph get_input_from_file() {
         MetroGraph metro_graph;
-        vector<Station> stations;
         ifstream input("data.txt");
         ofstream output("data.txt");
 
@@ -22,7 +21,7 @@ public:
             input>>station_id>>station_name>>x_coordinate>>y_coordinate;
             output<<station_id<<station_name<<x_coordinate<<y_coordinate;
             Station st(station_id,station_name,x_coordinate,y_coordinate);
-            stations.push_back(st);
+            metro_graph.add_station(st);
 
         }
         int num_connection;
