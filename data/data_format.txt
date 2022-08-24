@@ -2,7 +2,10 @@
 
 
 # data for station 1
-<station id>   <station name>   <station1_x_coord>    <station1_y_coord> 
+<station id>   
+<station name>   
+<station1_x_coord>    
+<station1_y_coord> 
 .
 .
 .
@@ -13,13 +16,20 @@
 .
 .
 #data for station n
-<station id>   <station name>   <station1_x_coord>     <station1_y_coord> 
+<station id>   
+<station name>   
+<station1_x_coord>     
+<station1_y_coord> 
 
 #connection details
 <num of connection>
-<connection1> <connection2> <color>
+<station_1_id> 
+<station_2_id> 
+<color_id>
 .
 .
 .
 .
-<connection_nth> <connection_nth> <color>
+<station k_id> 
+<station n_id> 
+<color_id>
