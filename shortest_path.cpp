@@ -11,6 +11,10 @@ class Shortest_path_finder{
 public:
 
     vector<pair<int,int>> get_shortest_path(int source,MetroGraph mg) {
+        if(glob::dM){
+            cout << "get_shortest_path called. source = " << source << endl;
+            cout << "graph details : num_stations = " << mg.get_count_station() ;
+        }
 
         int no_of_station=mg.get_count_station();
         //store shortest distance from the given source
@@ -78,6 +82,28 @@ public:
                 }
             }
         }
+
+        if(glob::dM){
+            cout << "shortest_path calculated for source = " << source << " :\n";
+            cout << "distance array : " ;
+            for(int i : distance){
+                cout << i << " ";
+            }
+            cout << endl;
+
+            cout << "parent array : ";
+            for(pair<int, int> i : parent){
+                cout << "{" << i.first << ", " << i.second << "} ";
+            }
+            cout << endl;
+
+            cout << "color array : ";
+            for(int i : color){
+                cout << i << " ";
+            }
+            cout << endl;
+        }
+
         return parent;
     }
 };

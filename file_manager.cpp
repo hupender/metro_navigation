@@ -11,6 +11,8 @@ public:
         MetroGraph metro_graph;
         ifstream input("data.txt");
 
+        if(glob::dM) cout << "Started Reading data from file\n";
+
 
         int num_station;
         input>>num_station;
@@ -24,6 +26,8 @@ public:
             metro_graph.add_station(st);
 
         }
+
+        if(glob::dM) cout << "Finished Reading station data\n";
         int num_connection;
         input>>num_connection;
 
@@ -35,6 +39,10 @@ public:
             Connection c(station1_id,station2_id,color,distance);
             metro_graph.add_connection(c);
         }
+
+
+        if(glob::dM) cout << "Finished reading connection data\n";
+
         return metro_graph;
         
     }

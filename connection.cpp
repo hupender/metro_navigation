@@ -36,6 +36,11 @@ public:
         this->distance       = distance       ;   
     }
 
+    void print_data(){
+        cout << "station ids = (" << first_station << ", " << second_station << ")\n";
+        cout << "color_id = " << color_id << " distance = " << distance << endl;
+    }
+
     // station 1 id
     int get_first_station() {
         return first_station;

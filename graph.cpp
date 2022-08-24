@@ -42,11 +42,21 @@ public :
                 _2y=stations[i].get_y_coordinate();
             }
         }
-        return find_distance(_1x,_1y,_2x,_2y);
+        float res =  find_distance(_1x,_1y,_2x,_2y);
+        
+
+        if(glob::dM) cout << "get_distance for id1 = " << id1 << " id2 = " << id2 << " returned res = " << res << "\n";
+        
+        return res;
     }
 
     // add station
     void add_station(Station s) {
+
+        if(glob::dM){
+            cout << "add_station called for station with these details : \n";
+            s.print_data();
+        }
         stations.push_back(s);
         adj.push_back({});
         // can use resize instead
@@ -56,6 +66,9 @@ public :
     // very inefficient
     // Todo : Make it efficient
     void delete_station(int station_id) {
+        if(glob::dM){
+            cout << "delete_station called for station_id = " << station_id << endl;
+        }
         adj[station_id].clear();
         for(int i=0;i<adj.size();i++) {
             for(int j=0;j<adj[i].size();j++) {
@@ -75,6 +88,10 @@ public :
     }
 
     void add_connection(Connection c) {
+        if(glob::dM){
+            cout << "add_connection called for connection with these details : \n";
+            c.print_data();
+        }
         adj[c.get_first_station()].push_back(c);
         adj[c.get_second_station()].push_back(c);
         cout<<"ADDDED SUCCESSFULLY"<<endl;
@@ -82,6 +99,12 @@ public :
     
     // delete connection
     void delete_connection(int id_1st_station,int id_2nd_station) {
+        
+        if(glob::dM){
+            cout << "delete_connection called for these station ids : " << id_1st_station << ", " << id_2nd_station << endl;
+        }
+
+
         vector<Connection>::iterator it;
         for(it=adj[id_1st_station].begin(); it!=adj[id_1st_station].end() ;it++) {
             if(it->get_second_station()==id_2nd_station || it->get_first_station()==id_2nd_station) {

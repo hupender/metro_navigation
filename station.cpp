@@ -30,6 +30,11 @@ public:
         this->station_y_coordinate   = station_y_coordinate;
     }
 
+    void print_data(){
+        cout << "id = " << station_id << " name = " << station_name << endl;
+        cout << "coordinates = (" << station_x_coordinate << ", " << station_y_coordinate<< ")\n";
+    }
+
     // get id of station
     int get_id() {
         return station_id;

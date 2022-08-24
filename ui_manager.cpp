@@ -22,6 +22,9 @@ public:
         int choice;
         cout<<"Enter what operation you want to do"<<endl;
         cin>>choice;
+
+        if(glob::dM) cout << "user entered choice = " << choice << endl;
+
         switch(choice) {
 
             // add station
