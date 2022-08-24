@@ -13,8 +13,10 @@ public:
     vector<pair<int,int>> get_shortest_path(int source,MetroGraph mg) {
         if(glob::dM){
             cout << "get_shortest_path called. source = " << source << endl;
-            cout << "graph details : num_stations = " << mg.get_count_station() ;
+            cout << "graph details : num_stations = ";
+            cout << mg.get_count_station() << endl;
         }
+        bool internal_debug = true && glob::dM;
 
         int no_of_station=mg.get_count_station();
         //store shortest distance from the given source
@@ -47,6 +49,12 @@ public:
             itr=s.begin();
             int top_node=itr->second;
             int top_dis=itr->first;
+
+            if(internal_debug){
+                cout << "[DEBUG] top_node " << top_node << " top_dis = " << top_dis << endl;
+            }
+
+            s.erase(s.begin());
 
             //get adjacency list
             vector<vector<Connection>> adj_list=mg.get_adjacency();

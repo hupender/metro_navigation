@@ -29,6 +29,7 @@ public:
 
             // add station
             case 1:
+            {
                 // how many stations we want to add
                 int n;
                 cout<<"Enter how many station you want to add"<<endl;
@@ -43,9 +44,10 @@ public:
                     metrograph.add_station(st);
                 }
                 break;
-
+            }
             // add edge
             case 2:
+            {
                 int p;
                 // how many edges we want to add
                 cout<<"Enter count of edges you want to add "<<endl;
@@ -58,30 +60,37 @@ public:
                     metrograph.add_connection(c);
                 }
                 break;
-                
+            }
             // remove station
             case 3:
+            {
                 int id;
                 cout<<"Enter id of station you want to delete"<<endl;
                 cin>>id;
                 metrograph.delete_station(id);
                 break;
-            
+            }
             // remove a edge/connection
             case 4:
+            {
                 int id1,id2;
                 cout<<"Enter id of the station you want to delete the edge"<<endl;
                 cin>>id1>>id2;
                 metrograph.delete_connection(id1,id2);
                 break;
-
-            default:
+            }
+            case 5:
+            {
                 Shortest_path_finder sortest_path;
+                cout<<"Enter source_id and destination_id of stations"<<endl;
                 int source,destination;
                 cin>>source>>destination;
                 vector<pair<int,int>> path=sortest_path.get_shortest_path(source,metrograph);
                 reverse(path.begin(),path.end());
                 break;
+            }
+            default :
+                cout << "Invalid option\n";
 
         }
     }
