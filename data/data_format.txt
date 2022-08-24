@@ -23,13 +23,9 @@
 
 #connection details
 <num of connection>
-<station_1_id> 
-<station_2_id> 
-<color_id>
+<station_1_id>  <station_2_id>  <color_id>
 .
 .
 .
 .
-<station k_id> 
-<station n_id> 
-<color_id>
+<station k_id> <station n_id> <color_id>
