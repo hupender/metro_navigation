@@ -23,8 +23,11 @@ public:
 
         for(int i=0;i<num_station;i++) {
             input>>station_id;
+            getline(input, station_name); // dummy read for "\n??"
             getline(input, station_name);
             input>>x_coordinate>>y_coordinate;
+
+
 
             Station st(station_id,station_name,x_coordinate,y_coordinate);
             metro_graph.add_station(st);
