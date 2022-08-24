@@ -24,12 +24,12 @@ public :
     }
 
     // find distance between two stations
-    float find_distance(int x1,int y1,int x2,int y2) {
+    float find_distance(float x1,float y1,float x2,float y2) {
         return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
     }
 
     float get_distance(int id1,int id2) {
-        int _1x,_1y,_2x,_2y;
+        float _1x,_1y,_2x,_2y;
         for(int i=0;i<stations.size();i++) {
             if(stations[i].get_id()==id1) {
                 _1x=stations[i].get_x_coordinate();

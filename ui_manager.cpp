@@ -30,7 +30,8 @@ public:
                 cin>>n;
                 cout<<"Enter station details"<<endl;
                 for(int i=0;i<n;i++) {
-                    int id,x,y;
+                    int id;
+                    float x,y;
                     string s;
                     cin>>id>>s>>x>>y;
                     Station st(id,s,x,y);

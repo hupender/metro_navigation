@@ -11,16 +11,16 @@ private:
     
     int      station_id;
     string   station_name;
-    int      station_x_coordinate;
-    int      station_y_coordinate;
+    float      station_x_coordinate;
+    float      station_y_coordinate;
 
 public:
     // constructor
     Station(
         int      station_id,
         string   station_name,
-        int      station_x_coordinate,
-        int      station_y_coordinate
+        float      station_x_coordinate,
+        float      station_y_coordinate
     ) {
         this->station_id             = station_id;
         this->station_name           = station_name;
@@ -37,11 +37,11 @@ public:
         return station_name;
     }
     // x coordinate of station
-    int get_x_coordinate() {
+    float get_x_coordinate() {
         return station_x_coordinate;
     }
     // y coordinate of station
-    int get_y_coordinate() {
+    float get_y_coordinate() {
         return station_y_coordinate;
     }
 
