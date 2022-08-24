@@ -42,7 +42,7 @@ public:
         float distance;
         for(int i=0;i<num_connection;i++) {
             input >>station1_id>>station2_id>>color;
-            distance=metro_graph.get_distance(station1_id,station1_id);
+            distance=metro_graph.get_distance(station1_id,station2_id);
             Connection c(station1_id,station2_id,color,distance);
             metro_graph.add_connection(c);
         }
