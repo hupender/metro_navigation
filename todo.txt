@@ -1,0 +1,25 @@
+Features/Code to add
+
+1. File update after exit of program
+2. Input taken in infinite loop
+3. Proper printing of choice value on user input 
+4. Input correction : taking station name instead of id.
+5. More properly printing the path (Print color value and station name)
+6. Color values in file input 
+7. Input validation in adding station, adding connection.
+8. Make more efficient : pass by refrence, etc.
+
+
+
+More 
+
+1. Testing of program
+    a. Edge cases input
+    b. invalid input
+    c. input with a very big graph (>=1000 stations)
+
+
+Minor
+
+1. Cleaner code : Split code into functions/classes, Change 
+
