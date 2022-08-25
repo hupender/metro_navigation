@@ -85,8 +85,29 @@ public:
                 cout<<"Enter source_id and destination_id of stations"<<endl;
                 int source,destination;
                 cin>>source>>destination;
-                vector<pair<int,int>> path=sortest_path.get_shortest_path(source,metrograph);
-                reverse(path.begin(),path.end());
+                vector<pair<int,int>> parent=sortest_path.get_shortest_path(source,metrograph);
+                reverse(parent.begin(),parent.end());
+                vector<pair<int,int>> res;
+                int i;
+                for(i=0;i<parent.size();i++) {
+                    if(parent[i].first==destination) {
+                        break;
+                    }
+                }
+                while(i!=source) {
+                    res.push_back(parent[i]);
+                    i=parent[i].first;
+                }
+                reverse(res.begin(),res.end());
+                cout<<res[0].first<<endl;;
+                for(int j=1;j<res.size();j++) {
+                    if(res[j].second==res[j-1].second) {
+                        cout<<res[j].first<<endl;
+                    }
+                    else {
+                        cout<<"Change line from "<<res[j-1].second<<" to "<<res[j].second<<endl;
+                    }
+                }
                 break;
             }
             default :
