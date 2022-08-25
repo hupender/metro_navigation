@@ -57,7 +57,7 @@ public:
     }
 
     // // distance between two  station
-    int get_distance() {
+    float get_distance() {
         return distance;
     }
 };

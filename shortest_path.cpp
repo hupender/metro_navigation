@@ -20,7 +20,7 @@ public:
 
         int no_of_station=mg.get_count_station();
         //store shortest distance from the given source
-        vector<int> distance(no_of_station,INT_MAX);
+        vector<float> distance(no_of_station,INT_MAX);
         distance[source]=0;
 
         //store parent station of all stations
@@ -37,18 +37,18 @@ public:
         color[source]=-1;
 
         // keeps data in a sorted way and works like a priority queue
-        set<pair<int,int>> s;
+        set<pair<float,int>> s;
 
         s.insert({0,source});
         while(!s.empty()) {
 
             // iterator to set of pairs
-            set<pair<int,int>>::iterator itr;
+            set<pair<float,int>>::iterator itr;
 
             // pop element with smallest distance
             itr=s.begin();
             int top_node=itr->second;
-            int top_dis=itr->first;
+            float top_dis=itr->first;
 
             if(internal_debug){
                 cout << "[DEBUG] top_node " << top_node << " top_dis = " << top_dis << endl;
@@ -102,7 +102,7 @@ public:
         if(glob::dM){
             cout << "shortest_path calculated for source = " << source << " :\n";
             cout << "distance array : " ;
-            for(int i : distance){
+            for(auto i : distance){
                 cout << i << " ";
             }
             cout << endl;
