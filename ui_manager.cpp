@@ -86,26 +86,22 @@ public:
                 int source,destination;
                 cin>>source>>destination;
                 vector<pair<int,int>> parent=sortest_path.get_shortest_path(source,metrograph);
-                reverse(parent.begin(),parent.end());
-                vector<pair<int,int>> res;
-                int i;
-                for(i=0;i<parent.size();i++) {
-                    if(parent[i].first==destination) {
-                        break;
-                    }
+                vector<pair<int,int>> path;
+                // res.push_back()
+                path.push_back({destination,parent[destination].second});
+                while(destination!=source) {
+                    path.push_back(parent[destination]);
+                    destination=parent[destination].first;
                 }
-                while(i!=source) {
-                    res.push_back(parent[i]);
-                    i=parent[i].first;
-                }
-                reverse(res.begin(),res.end());
-                cout<<res[0].first<<endl;;
-                for(int j=1;j<res.size();j++) {
-                    if(res[j].second==res[j-1].second) {
-                        cout<<res[j].first<<endl;
+                reverse(path.begin(),path.end());
+                // cout<<"printing started"<<endl;
+                cout<<"Start from station "<<path[0].first<<endl;
+                for(int j=1;j<path.size();j++) {
+                    if(path[j-2].second==path[j-1].second) {
+                        cout<<"Go from station "<<path[j-1].first <<" to station "<<path[j].first<<endl;
                     }
                     else {
-                        cout<<"Change line from "<<res[j-1].second<<" to "<<res[j].second<<endl;
+                        cout<<"Change line from station "<<path[j-1].first<<" to "<< path[j].first<<" from color " <<path[j-2].second<<" to color "<<path[j-1].second<<endl;
                     }
                 }
                 break;
