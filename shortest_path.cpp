@@ -60,19 +60,27 @@ public:
             vector<vector<Connection>> adj_list=mg.get_adjacency();
 
             for(auto i:adj_list[top_node]) {
+                int child;
                 
                 // get the color of edge between curr station and child nodes
-                color[i.get_second_station()]=i.get_color_id();
-
+                if(i.get_first_station()==top_node) {
+                    child=i.get_second_station();
+                }
+                else {
+                    child=i.get_first_station();
+                }
+                color[child]=i.get_color_id();
+                
+                // line change factor
                 int line_change_factor=10;
 
-                if(color[i.get_second_station()]==color[top_node]) {
+                if(color[child]==color[top_node]) {
                     line_change_factor=0;
                 }
 
                 // check if distance to reach a station is short from any path
-                if(distance[i.get_second_station()] > i.get_distance()+top_dis+line_change_factor) {
-                    auto check=s.find({distance[i.get_second_station()],i.get_second_station()});
+                if(distance[child] > i.get_distance()+top_dis+line_change_factor) {
+                    auto check=s.find({distance[child],child});
                     
                     // erase any earlier presence of the station if any present in the set
                     if(check!=s.end()) {
@@ -80,13 +88,13 @@ public:
                     }
 
                     // update parent
-                    parent[i.get_second_station()]={top_node,i.get_color_id()};
+                    parent[child]={top_node,i.get_color_id()};
 
                     // insert with the short path
-                    s.insert({top_dis+i.get_distance()+line_change_factor, i.get_second_station()});
+                    s.insert({top_dis+i.get_distance()+line_change_factor, child});
 
                     //update the distance vector
-                    distance[i.get_second_station()]=top_dis+i.get_distance()+line_change_factor;
+                    distance[child]=top_dis+i.get_distance()+line_change_factor;
                 }
             }
         }
